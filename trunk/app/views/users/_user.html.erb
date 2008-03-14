@@ -1,0 +1,23 @@
+<b>
+  <%=h user.login %> ( <% user.roles.each do |f| %>
+                              <%= f.name %> 
+                              <% end%> )
+</b>
+<br />
+<b>
+  <%=h user.email %>
+</b>
+<br />
+  ID: <%= user.id %>
+<small>
+  <br />
+  Created: <%= user.created_at %>
+  <br />
+  <% if user.created_at < user.updated_at %>
+    Updated: <%= user.updated_at %>
+  <% end %>
+  <br />
+</small>
+<%= link_to 'Delete', user, :confirm => 'Are you sure? This cannot be undone!', :method => :delete %>
+<br />
+<hr />

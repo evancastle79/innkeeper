@@ -1,0 +1,14 @@
+<h1>
+  Event List
+</h1>
+<br />
+<p>
+  <%= link_to 'New event', new_event_path %>
+</p>
+<h3>
+  Listing all events...
+</h3>
+<br />
+<hr />
+<%= render :partial => @events %>
+<br />

@@ -1,0 +1,14 @@
+<h1>
+  User List
+</h1>
+<br />
+<p>
+  <%= link_to 'New user', new_user_path %>
+</p>
+<h3>
+  Listing all users...
+</h3>
+<br />
+<hr />
+<%= render :partial => @users %>
+<br />

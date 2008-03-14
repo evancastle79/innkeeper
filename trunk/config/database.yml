@@ -1,0 +1,12 @@
+# 
+# This is the database configuration file. 
+#
+# The database names must match what exsists on the server.
+#
+
+production:
+  adapter:
+  database:
+  username:
+  password:
+  host:

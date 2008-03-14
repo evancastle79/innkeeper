@@ -1,0 +1,11 @@
+Your reservations (click to edit):
+<br />
+<% Event.find(:all, :conditions => "user_id = #{current_user.id}").each do |event| %>
+  <div class="single_event">
+    <%= link_to event.title, {:id => event.id, :controller => "events", :action => "edit"} %>
+    <br />
+    [ <%= event.start.strftime("%m/%d/%Y") %> ] to [ <%= event.ends.strftime("%m/%d/%Y") %> ]
+    | <%= link_to "cancel?", {:id => event.id, :controller => "events", :action => "destroy"}, :method => :delete, :confirm => 'Are you sure? This cannot be undone!' %></div><br />
+  </div>
+<% end %>
+</ol>

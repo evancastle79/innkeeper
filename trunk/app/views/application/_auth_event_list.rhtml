@@ -1,0 +1,68 @@
+<div class="all_events">
+<% if Event.find(:all).blank? %>
+  There are no events in the database. Advertise this site and wait, someone will make a reservation.
+<% else %>
+  All Events for everyone:
+<br /><br />
+<% Event.find(:all).each do |event| %>
+
+  <div class="event_container">
+
+    <div class="links">
+      <%= link_to "cancel event", {:id => event.id, 
+  													:controller => "events", 
+  													:action => "destroy"}, 
+  							:method => :delete, 
+  							:confirm => 'WARNING! Are you sure? This can only be undone from a database restoration...' %>
+       <br /><br />
+       <%= link_to "fund capture" %>
+       <br />
+    </div>
+    
+    <div class="notes">
+      <%= link_to "Notes:", {:id => event.id, 
+														 :controller => "events",
+														 :action => "edit"} %>
+      <%= event.note %>
+    </div>
+    
+    <div class="<%= cycle('details_1','details_2')%>">
+      
+      <span class="event_title">
+        <%= link_to event.title, {:id => event.id, :controller => "events", :action => "edit"} %>
+        <br />
+      </span>
+      
+      <span class="date_range">
+        <%= event.start.strftime("%m/%d/%Y") %> to <%= event.ends.strftime("%m/%d/%Y") %>
+        <br />
+        Check in <%= event_distance_from_now(event.id) %> from now
+        <br />
+      </span>
+      
+      <span class="glance">X people for <%= pluralize(number_of_days(event), 'day') %> - 
+        <% if !event.room_id.blank? %>
+          Room #<%= event.room_id %>
+        <% else %>
+          none
+        <% end %>
+      <br />
+      </span>
+      
+      <span class="money">
+        <% if event.price_when_saved > 0 %>
+          $<%= event.price_when_saved %>
+        <% else %>
+          * free *
+        <% end %>
+      </span>
+    </div>
+  </div>
+  <br />
+<% end %>
+</div>
+<br class="clearfloat" />
+<br />
+<br />
+
+<% end %>

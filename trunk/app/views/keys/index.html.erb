@@ -1,0 +1,20 @@
+<% title("Key Listing")%>
+<br />
+<br />
+<% if !@keys.blank? %>
+<%= paginating_links(@keys) %>
+<br />
+  <% @keys.each do |key| %>
+    <b>Actual Key: <%= key.key_actual %></b>
+  <br />
+    <% if key.blocked %>
+      This key has been blocked: <%= link_to 'unblock', edit_key_path(key) %>
+  	<br />
+    <% end%>
+  <%= link_to 'Edit Key', edit_key_path(key) %>
+  <br />
+  <br />
+  <% end %>
+<% else %>
+  There are no keys.
+<% end %>

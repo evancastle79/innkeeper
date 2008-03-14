@@ -1,0 +1,38 @@
+<p>
+  <b>Name:</b>
+  <%=h @room.name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @room.location %>
+</p>
+
+<p>
+  <b>Clean:</b>
+  <%=h @room.clean %>
+</p>
+
+<p>
+  <b>Teaser:</b>
+  <%=h @room.teaser %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @room.description %>
+</p>
+
+<p>
+  <b>Occupied:</b>
+  <%=h @room.occupied %>
+</p>
+
+<p>
+  <b>Base price:</b>
+  <%=h @room.base_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>

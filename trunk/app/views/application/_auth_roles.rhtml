@@ -1,0 +1,7 @@
+	  You have the following roles:
+    <br />
+    <ol>
+  	  <% current_user.roles.each do |role| %>
+  	    <li><%= role.name %>
+  	  <% end %>
+    </ol>
