@@ -1,0 +1,92 @@
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+== Innkeeper ==
+
+Innkeeper is available under the General Public Licence version 3. You are free to make
+copies of this software and distribute it as long as you do not remove or obscure this
+notice. If you modify this software, you must note that it has been modified, the author
+does not want to take credit for your hard work.
+
+Innkeeper makes use of other software by other authors, notably Ruby, role_requirement,
+rails, paginating_find, acts_as_versioned, restful_authentication, chronic, and others.
+
+== Welcome to Innkeeper - Relax and enjoy your stay ==
+
+Innkeeper was written to manage a rental property in Hawaii with very specific requirements. 
+
+The goal was to allow a visitor to book a room from a mobile outside the property, 
+make a payment, and recieve a 5 digit door key. The key would be sent to the appropriate 
+door and program it accordingly. The user could then enter the property and open the door
+to their room. When the reservation expired, the key would expire and the visitor would be 
+locked out of the property. 
+
+Innkeeper uses PayPal as the default payment gateway. If you do a lot of buisness, you 
+should consider changing this to something less expensive. 
+
+We decided it would be a really good idea if the property owner could subscribe to an RSS
+feed instead of recieving dozens (or thousands) of email notifications per day. Once you've
+set up innkeeper, be sure to subscribe to the feed because it's how you'll stay informed.
+
+You will have the option of recieving email notifications instead of RSS for smaller, less busy
+properties.
+
+== .PLAN
+
+This is the part where I make long-term goals, like:
+	
+	* Bootstrap installer
+	* VOiP! OMG! VOOOOiP!
+	* Room-to-staff messaging (and VOiP!)
+	* Post-stay satisfaction surveys / reporting
+	* More payment gateways supported (authorize.net, google checkout)
+	* Inventory support / reporting
+	* Automatic one-click updates / update awareness
+	* Database backup and restore to local drive
+	* Support for more door / key manufacturers
+	* Link to security camera feeds
+	
+== Getting Started
+
+1. You need web hosting that supports both 1) Ruby on Rails and 2) MySQL. You also need a 
+		PayPal account that has been verified for business.
+2. Unzip all the files into the directory on your hosting server where Ruby is served (try ~/rails ?)
+3. Create a database, then edit /config/database.yml with your database name, user and pass
+4. Restart or rebuild your server and cross your fingers
+5. A default user named JohnPerkins (pass 12345) is created by default
+6. Login and create a new innkeeper user with a strong password, then delete JohnPerkins
+
+You're done! Sit back and watch the money just roll in.
+
+== Shoutouts
+
+Back in the old days, coders put a list of people in the readme that helped them, like this:
+	- Drake Weinert for the mad crazy efficient Key.create_unused method! Fifty bones + rrr'spek
+	- Tom Winegar for rides, beers, jobs, advice, food, company, coffee, kindness, everything
+	- Eve Furchgott for putting up with me for what seemed like daily intrusions at 8am and 6pm
+	- Norman and Sheree for the roof, patience, kindness, food, harassment, bed, electricity, tp, etc
+	- Neil Erickson for the office, net, patience, kindness, friendship, money, independence
+	- Marc Isemann for writing spaghetti and giving me a great excuse to learn ruby on rails. Danke.
+	- Special thanks to everyone at the Hilo MySQL Meetup - Reed, Back Row Guy, Marston, etc...
+	- Visit http://www.pakalanainn.com
+
+== Author
+
+{{{ 
+  <!--
+  If you wish to contact the author, you'll have to pass the 20% test:
+  
+  00:01> 'john_dawt__deh__dawt_perkensATgmYAYil_dawt__see_om'
+  																									.gsub('YAY', 'a')
+  		I really hate 										.gsub('_deh_', 'd')
+  		unsolicited email				.gsub('AT', '@')
+  								.gsub('_see_', 'c')
+  		.gsub('_dawt_', '.')							.gsub('kens','kins')
+  
+  'Remember, kids, you must be 20% smarter than the tools you use'.gsub('u u', 'u abu') 
+	-->
+}}}

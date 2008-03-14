@@ -1,0 +1,32 @@
+<h1>Editing key</h1>
+
+<%= error_messages_for :key %>
+
+<% form_for(@key) do |f| %>
+  <p>
+    <b>Key</b><br />
+    <%= @key.key_actual %>
+  </p>
+
+  <p>
+    <b>Blocked</b><br />
+    <%= f.check_box :blocked %>
+  </p>
+
+  <p>
+    <b>Belongs to Event</b><br />
+    <%= f.text_field :event_id %>
+  </p>
+
+  <p>
+    <b>Emailed to</b><br />
+    <%= f.text_field :emailed_to %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @key %> |
+<%= link_to 'Back', keys_path %>

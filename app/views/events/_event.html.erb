@@ -1,0 +1,39 @@
+<h4>
+  <%=h event.title %>
+</h4>
+<b> 
+  <%=h User.find_by_id(event.user_id).email %>
+</b>
+<br />
+  Room:
+  <%= event.room_id %>
+<br />
+  
+Details:
+<small>
+  <br />
+  Start: <%= event.start %>
+  <br />
+  End: <%= event.ends %>
+  <br />
+  <% if event.is_all_day_event? %>
+    This is an all-day event.
+    <br />
+  <% else %>
+    Duration: 
+    <%=h event.duration %> min.
+    <br />
+  <% end %>
+  <% if event.has_note? %>
+	Note: 
+	<%=h event.note %>
+  <% else %>
+    <%= link_to 'New Note', edit_event_path(event) %>
+  <% end %>
+</small>
+<br />
+<%= link_to 'Show', event -%> |
+<%= link_to 'Edit', edit_event_path(event) -%> |
+<%= link_to 'Destroy', event, :confirm => 'Are you sure? This cannot be undone!', :method => :delete %>
+<br />
+<hr />

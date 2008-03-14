@@ -1,0 +1,200 @@
+body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/*
+  a, a:active, a:focus
+    Defines the look of links.
+*/
+a, a:active, a:focus {
+  color: #3366FF;
+  text-decoration: none;
+}
+
+/*
+  a:hover
+    Defines what a link looks like when you float over it.
+*/
+a:hover {
+  text-decoration: underline;
+}
+
+.links {
+	font-size: .7em;
+	float: left;
+	text-align: right;
+	padding-top: 2em;
+  width: 11%;
+	display: block;
+}
+
+.event_title {
+	font-weight: bold;
+	text-transform: capitalize;
+	font-style: oblique;
+}
+
+/*
+  .menu
+    Defines the look of the menu of items the users see.
+*/
+.menu {
+  float: right;
+  text-align: center;
+  padding: .3em;
+  background-color: #E8F8FF;
+  width: 100%;
+  display: block;
+}
+
+/* 
+  texta
+    Defines the look of the text field in the search form. 
+*/
+.texta {
+  width: 10em;
+  font-size: .8em;
+  border: 1px dotted;
+}
+
+/*
+.menu a, .menu a:visited, .menu a:hover {
+  color: #3366FF;
+}
+*/
+.search {
+  float: right;
+  padding-right: 1em;
+  text-align: right;
+  font-size: .8em;
+}
+
+/*
+  .tm
+    Defines the look of the trademark notice at the bottom
+    of every page.
+*/
+.tm {
+	margin: 15em;
+	padding-top: 2em;
+	text-align: center;
+	border-top-width: thin;
+	border-top-style: dashed;
+	border-top-color: #666666;
+	font-size: x-small;
+	text-transform: uppercase;
+}
+
+/*
+  .headliner
+    This bar is the first thing the user sees.
+*/
+.headliner {
+  font-size: 2em;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: #B2E8FF;
+  color: gray;
+  font-weight: bold;
+  text-shadow: 0px 4px black;
+  padding: .25em;
+}
+/*
+  .money
+    Defines the appearance of money strings.
+*/
+.money {
+	font-weight: bolder;
+	color: #339933;
+	font-size: small;
+}
+
+.room {
+	font-size: small;
+
+}
+
+.date_range  {
+	font-size: small;
+}
+
+.glance {
+	font-size: small;
+}
+
+.event {
+	border: 1px solid #FF0000;
+	display: block;
+	width: 90%;
+}
+
+.notes {
+	float: right;
+	width: 39%;
+	margin: 0.1em;
+	overflow: visible;
+	font-size: x-small;
+}
+
+.all_events {
+	padding: 1em;
+	border: 1px solid #666666;
+	display: block;
+	margin: 1em;
+}
+
+.details_1, .details_2 {
+	margin-top: 0px;
+	margin-right: 40%;
+	margin-bottom: 0px;
+	margin-left: 12%;
+	height: 100%;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	padding-left: 0.3em;
+	display: block;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	border-right-style: dashed;
+	border-left-style: dashed;
+}
+
+/*
+  .details_1 & .details_2
+    Define the cycling difference between the boxes containing
+    event details.
+*/
+.details_2 {
+	background-color: #E8F8FF;
+}
+.details_1 {
+	background-color: #B2E8FF;
+}
+
+/*
+  .event_container
+    Contains an event in the list of events.
+*/
+.event_container {
+	width: 100%;
+	display: block;
+	overflow: auto;
+}
+
+/*
+  .clearfloat
+    Used to force items into certain css boxes.
+*/
+.clearfloat {
+	clear: both;
+}

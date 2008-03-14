@@ -1,0 +1,52 @@
+<% title "Home" %>
+<%= yield  %>
+<div class="headliner">Welcome to Innkeeper</div>
+
+<% if logged_in? %>
+	<%= self.current_user.login %> (<%= current_user.email %>) ID: <%= current_user.id %>
+	<% if current_user.has_any_role?("admin", "innkeeper", "staff", "visitor") %>
+    <%= render :partial => 'auth_roles' %>
+	<% end %>
+  <!--
+  <div class="search">
+    <%= link_to 'search tips','' %>
+    <br />
+    search
+    <%= text_field '','', {:class => 'texta'} %>
+    <br />
+  </div>
+  -->
+<br />
+
+  <%= render_current_calendar %>
+  <br />
+  <br />
+  <%= render_next_month_calendar %>
+  
+  
+  <div class="menu">    
+    <%= link_to 'create event', new_event_path %> | 
+    <% if current_user.has_any_role?("innkeeper", "staff", "admin") %>
+      <%= link_to 'users', users_path %> | 
+      <%= link_to 'keys', keys_path %> |
+    <% end %>
+    <%= link_to 'logout', {:controller => "sessions", :action => "destroy"}, :method => :delete %>
+  </div>
+  
+  <br />
+  <br />
+  
+  <% if current_user.has_role?("visitor") %>
+    <%= render :partial => 'users_reservations' %>
+    Your balance: $<%= current_user.purse %>
+  <% end %>
+	<% if current_user.has_role?("innkeeper") %>
+    <%= render :partial => 'auth_event_list' %>
+  <% end %>
+<% else %> <!-- The user is not logged in, so... -->
+  <%= render :partial => 'login_form' %>
+<% end %>
+<br />
+<div class="tm">
+  <%= BYLINE %>
+</div>

@@ -1,0 +1,33 @@
+<% form_for(@event) do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :title, :value => "#{current_user.login} net rsv" %>
+  <%= f.hidden_field :all_day, :value => true %>
+  <%= f.hidden_field :room_id, :value => 1 %>
+
+  <p>
+    <b>
+      Start
+    </b>
+    <br />
+    <%= f.datetime_select :start %>
+  </p>
+
+  <p>
+    <b>
+      End
+    </b>
+    <br />
+    <%= f.datetime_select :ends %>
+  </p>
+
+  <p>
+    <b>
+      Please let us know if you have any special requests or needs here:
+    </b>
+    <br />
+    <%= f.text_area :note %>
+  </p>
+  <h1>
+    <%= f.submit "Create" %>
+  </h1>
+<% end %>

@@ -1,0 +1,33 @@
+<p>
+  <b>
+  <%=h @event.title %>
+  </b>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%=h @event.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%=h @event.ends %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%=h @event.duration %>
+</p>
+
+<p>
+  <b>All Day:</b>
+  <%=h @event.all_day %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%=h @event.note %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', root_path %>

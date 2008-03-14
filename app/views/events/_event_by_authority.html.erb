@@ -1,0 +1,46 @@
+<% form_for(@event) do |f| %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      
+    <p>
+      <b>Event Title</b><br />
+      <%= f.text_field :title %>
+    </p>
+  
+    <p>
+      <b>Start</b><br />
+      <%= f.datetime_select :start %>
+    </p>
+
+    <p>
+      <b>End</b><br />
+      <%= f.datetime_select :ends %>
+    </p>
+    
+    
+    <% for room in Room.find(:all) %>
+      <p>
+        <%= check_box_tag "event[room_id][]", room.id, @event.rooms.include?(room) %>
+        <%= room.name %>
+      </p>
+    <% end %>
+  
+    <p>
+    	<b>All Day Event?</b><br />
+  	<%= f.check_box :all_day %>
+    </p>
+  
+    <p>
+      <b>Duration (in minutes)</b><br />
+      <%= f.text_field :duration %>
+  	<small>Note: If this is an all-day event, leave this blank.</small>
+    </p>
+  
+    <p>
+      <b>Notes:</b><br />
+      <%= f.text_area :note %>
+    </p>
+  
+    <p>
+      <%= f.submit "Create" %>
+    </p>
+  <% end %>

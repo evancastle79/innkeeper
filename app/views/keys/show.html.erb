@@ -1,0 +1,23 @@
+<p>
+  <b>Key actual:</b>
+  <%=h @key.key_actual %>
+</p>
+
+<p>
+  <b>Blocked:</b>
+  <%=h @key.blocked %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%=h @key.event_id %>
+</p>
+
+<p>
+  <b>Emailed to:</b>
+  <%=h @key.emailed_to %>
+</p>
+
+
+<%= link_to 'Edit', edit_key_path(@key) %> |
+<%= link_to 'Back', keys_path %>

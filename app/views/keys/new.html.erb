@@ -1,0 +1,10 @@
+<h1>New key</h1>
+
+<% @A = Time.now.to_f %>
+New key: <%= Key.unused_key %>
+<br />
+<% @B = Time.now.to_f %>
+Clocked at: <b><%= @B - @A %> mph (seconds)</b>
+<br />
+<br />
+<%= link_to 'Back', keys_path %> | <%= link_to "Another?", new_key_path %> 
